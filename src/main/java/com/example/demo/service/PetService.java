@@ -10,5 +10,5 @@ public interface PetService {
 
     List<PetDTO> findAll();
 
-    List<PetDTO> findByOwnerDocument(Integer ownerdocument);
+    List<PetDTO> findByOwnerDocument(Integer ownerDocument);
 }
