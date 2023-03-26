@@ -1,6 +1,8 @@
 package com.example.demo.service;
 
 import com.example.demo.controller.dto.BookingDTO;
+
+import java.util.Date;
 import java.util.List;
 
 public interface BookingService {
@@ -9,5 +11,7 @@ public interface BookingService {
 
     List<BookingDTO> findAll();
 
-    List<BookingDTO> findByBookingId(Integer bookingId);
+    List<BookingDTO> findBookingByBookingId(Integer bookingId);
+
+    List<BookingDTO> findByDate( String date);
 }
