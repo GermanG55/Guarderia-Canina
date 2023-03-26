@@ -25,5 +25,4 @@ public class BookingDTO {
     @Column(name = "DATE", nullable = false, length = 50)
     @Temporal(TemporalType.DATE)
     private Date date;
-
-}
+   }
