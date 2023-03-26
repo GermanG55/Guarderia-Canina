@@ -7,7 +7,7 @@ import java.util.Date;
 
 @Entity
 @Data
-@Table(name = "Pets")
+@Table(name = "PET")
 public class PetDTO {
 
     @Id
@@ -19,6 +19,9 @@ public class PetDTO {
 
     @Column(name = "CLIENT", nullable = false, length = 50)
     private String ownerName;
+    @ManyToOne
+    @JoinColumn(name="CLIENT")
+    private UserDTO UserDTO;
 
     @Column(name = "DATE_CREATED", nullable = false, length = 100, updatable = false)
     @Temporal(TemporalType.DATE)

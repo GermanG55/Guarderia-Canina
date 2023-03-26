@@ -28,7 +28,7 @@ public class PetServiceImpl implements PetService {
     }
 
     @Override
-    public List<PetDTO> findByOwnerDocument(Integer ownerdocument) {
-        return petRepository.findByOwnerDocument(ownerdocument);
+    public List<PetDTO> findByOwnerDocument(Integer ownerDocument) {
+        return petRepository.findByOwnerDocument(ownerDocument);
     }
 }

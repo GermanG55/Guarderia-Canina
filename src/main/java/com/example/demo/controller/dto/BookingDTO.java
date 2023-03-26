@@ -4,21 +4,29 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Data
 @Table(name = "BOOKING")
 public class BookingDTO {
 
-    @Id @GeneratedValue(strategy=GenerationType.AUTO)
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "ID", nullable = false, length = 11)
     private Integer bookingId;
 
-    @Column(name = "CLIENT_ID", length = 11)
+    @Column(name = "CLIENT_ID", length = 11, insertable = false, updatable = false)
     private Integer clientId;
-    //@ForeignKey
-    @Column(name = "PET_ID", length = 11)
+    @ManyToOne
+    @JoinColumn(name="CLIENT_ID")
+    private UserDTO userDTO;
+
+    @Column(name = "PET_ID", length = 11, insertable = false, updatable = false)
     private Integer petId;
+    @ManyToOne
+    @JoinColumn(name="PET_ID")
+    private PetDTO petDTO;
 
     @Column(name = "DATE")
     @Temporal(TemporalType.DATE)
