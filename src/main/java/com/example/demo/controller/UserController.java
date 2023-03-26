@@ -20,6 +20,7 @@ public class UserController {
     public List<UserDTO> findAll(){
         return userServices.findAll();
     }
+
     /*@GetMapping("/{document}")
     public List<UserDTO> findByDocument(@RequestParam Integer document){
         return userServices.findByDocument(document);

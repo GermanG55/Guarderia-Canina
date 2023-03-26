@@ -1,24 +1,22 @@
 package com.example.demo.service.impl;
 
 import com.example.demo.controller.dto.BookingDTO;
-import com.example.demo.controller.dto.UserDTO;
 import com.example.demo.repository.BookingRepository;
-import com.example.demo.repository.UserRepository;
 import com.example.demo.service.BookingService;
-import com.example.demo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 
 @Service
 public class BookingServiceImpl implements BookingService {
+    
     @Autowired
     private BookingRepository bookingRepository;
     @Override
-    public Boolean saveBooking(BookingDTO booked) {
+    public Boolean saveBooking(BookingDTO booking) {
         try {
-            bookingRepository.save(booked);
+            bookingRepository.save(booking);
+
             return true;
         } catch (Exception e) {
             return false;
@@ -31,7 +29,7 @@ public class BookingServiceImpl implements BookingService {
     }
 
     @Override
-    public List<BookingDTO> findByBookedDocument(Integer bookeddocument) {
-        return bookingRepository.findByBookedDocument(bookeddocument);
+    public List<BookingDTO> findByBookingId(Integer BookingId) {
+        return null;
     }
 }

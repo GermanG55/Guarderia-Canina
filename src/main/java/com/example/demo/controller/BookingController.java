@@ -8,18 +8,18 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping(path="/bookings")
+@RequestMapping(path="/booking")
 public class BookingController {
 
     @Autowired
-    private BookingService bookingServices;
+    private BookingService BookingServices;
     @RequestMapping(value="/saveBooking",method= RequestMethod.POST)
     public Boolean saveBooking(@RequestBody BookingDTO u){
-        return bookingServices.saveBooking(u);
+        return BookingServices.saveBooking(u);
     }
     @GetMapping(path = "/all")
     public List<BookingDTO> findAll(){
-        return bookingServices.findAll();
+        return BookingServices.findAll();
     }
 
 }
