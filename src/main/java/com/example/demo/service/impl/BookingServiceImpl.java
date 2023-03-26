@@ -9,12 +9,14 @@ import java.util.List;
 
 @Service
 public class BookingServiceImpl implements BookingService {
+    
     @Autowired
     private BookingRepository bookingRepository;
     @Override
     public Boolean saveBooking(BookingDTO booking) {
         try {
             bookingRepository.save(booking);
+
             return true;
         } catch (Exception e) {
             return false;
@@ -30,5 +32,4 @@ public class BookingServiceImpl implements BookingService {
     public List<BookingDTO> findByBookingId(Integer BookingId) {
         return null;
     }
-
 }
