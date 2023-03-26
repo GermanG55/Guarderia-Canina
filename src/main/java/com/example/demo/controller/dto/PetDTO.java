@@ -12,16 +12,16 @@ public class PetDTO {
 
     @Id
     @Column(name = "ID", nullable = false, length = 10)
-    private Integer id;
+    private Integer ownerDocument;
 
     @Column(name = "NAME", nullable = false, length = 50)
     private String petName;
 
     @Column(name = "CLIENT", nullable = false, length = 50)
-    private String ownerDocument;
+    private String ownerName;
     @ManyToOne
-    @JoinColumn(name = "CLIENT", insertable = false, updatable = false)
-    private UserDTO userDTO;
+    @JoinColumn(name="CLIENT")
+    private UserDTO UserDTO;
 
     @Column(name = "DATE_CREATED", nullable = false, length = 100, updatable = false)
     @Temporal(TemporalType.DATE)
