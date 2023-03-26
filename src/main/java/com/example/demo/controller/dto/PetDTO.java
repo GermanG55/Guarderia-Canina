@@ -12,7 +12,7 @@ public class PetDTO {
 
     @Id
     @Column(name = "ID", nullable = false, length = 10)
-    private Integer ownerdocument;
+    private Integer owner_document;
 
     @Column(name = "NAME", nullable = false, length = 50)
     private String pet_name;
