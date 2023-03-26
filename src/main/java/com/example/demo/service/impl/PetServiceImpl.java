@@ -6,6 +6,8 @@ import com.example.demo.service.PetService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.persistence.Id;
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -14,12 +16,19 @@ public class PetServiceImpl implements PetService {
     private PetRepository petRepository;
     @Override
     public Boolean savePet(PetDTO pet) {
-        try {
-            petRepository.save(pet);
-            return true;
-        } catch (Exception e) {
-            return false;
+        boolean result;
+        ArrayList<PetDTO> petDTOList = new ArrayList<>();
+        if (petDTOList.size() <= 20) {
+            try {
+                petRepository.save(pet);
+                result = true;
+            } catch (Exception e) {
+                result = false;
+            }
+        } else {
+            result = false;
         }
+        return result;
     }
 
     @Override
