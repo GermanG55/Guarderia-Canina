@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 import com.example.demo.controller.dto.PetDTO;
+import com.example.demo.controller.dto.UserDTO;
 import com.example.demo.service.PetService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -20,6 +21,10 @@ public class PetController {
     @GetMapping(path = "/all")
     public List<PetDTO> findAll(){
         return petServices.findAll();
+    }
+    @GetMapping("{document}")
+    public List<PetDTO> findByOwnerDocument(@RequestParam Integer ownerDocument){
+        return petServices.findByOwnerDocument(ownerDocument);
     }
 
 }

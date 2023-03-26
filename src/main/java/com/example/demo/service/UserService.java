@@ -9,5 +9,7 @@ public interface UserService {
 
     List<UserDTO> findAll();
 
-    List<UserDTO> findByDocument(Integer document);
+    List<UserDTO> findBookingByDocument(Integer document);
+
+    List<UserDTO> findPetsByDocument(Integer document);
 }

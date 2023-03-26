@@ -5,6 +5,10 @@ import com.example.demo.repository.BookingRepository;
 import com.example.demo.service.BookingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -29,7 +33,12 @@ public class BookingServiceImpl implements BookingService {
     }
 
     @Override
-    public List<BookingDTO> findByBookingId(Integer BookingId) {
+    public List<BookingDTO> findBookingByBookingId(Integer BookingId) {
         return null;
+    }
+
+    @Override
+    public List<BookingDTO> findByDate( String date) {
+        return bookingRepository.findByDate("'"+ date +"'");
     }
 }

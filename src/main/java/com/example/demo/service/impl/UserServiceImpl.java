@@ -27,7 +27,11 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
-    public List<UserDTO> findByDocument(Integer document) {
-        return userRepository.findByDocument(document);
+    public List<UserDTO> findBookingByDocument(Integer document) {
+        return userRepository.findBookingByDocument(document);
+    }
+    @Override
+    public List<UserDTO> findPetsByDocument(Integer document) {
+        return userRepository.findPetsByDocument(document);
     }
 }
