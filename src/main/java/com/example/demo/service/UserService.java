@@ -1,15 +1,15 @@
 package com.example.demo.service;
 
-import com.example.demo.controller.dto.UserDTO;
+import com.example.demo.model.User;
 
 import java.util.List;
 
 public interface UserService {
-    public Boolean saveUser(UserDTO user);
+    public Boolean saveUser(User user);
 
-    List<UserDTO> findAll();
+    List<User> findAll();
 
-    List<UserDTO> findBookingByDocument(Integer document);
+    List<User> findBookingByDocument(Integer document);
 
-    List<UserDTO> findPetsByDocument(Integer document);
+    List<User> findPetsByDocument(Integer document);
 }

@@ -1,17 +1,16 @@
 package com.example.demo.service;
 
-import com.example.demo.controller.dto.BookingDTO;
+import com.example.demo.model.Booking;
 
-import java.util.Date;
 import java.util.List;
 
 public interface BookingService {
 
-    Boolean saveBooking(BookingDTO booking);
+    Boolean saveBooking(Booking booking);
 
-    List<BookingDTO> findAll();
+    List<Booking> findAll();
 
-    List<BookingDTO> findBookingByBookingId(Integer bookingId);
+    List<Booking> findBookingByBookingId(Integer bookingId);
 
-    List<BookingDTO> findByDate( String date);
+    List<Booking> findByDate(String date);
 }

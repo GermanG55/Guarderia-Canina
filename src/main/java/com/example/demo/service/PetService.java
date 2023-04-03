@@ -1,14 +1,13 @@
 package com.example.demo.service;
 
-import com.example.demo.controller.dto.PetDTO;
-import com.example.demo.controller.dto.UserDTO;
+import com.example.demo.model.Pet;
 
 import java.util.List;
 
 public interface PetService {
-    public Boolean savePet(PetDTO pet);
+    public Boolean savePet(Pet pet);
 
-    List<PetDTO> findAll();
+    List<Pet> findAll();
 
-    List<PetDTO> findByOwnerDocument(Integer ownerDocument);
+    List<Pet> findByOwnerDocument(Integer ownerDocument);
 }
