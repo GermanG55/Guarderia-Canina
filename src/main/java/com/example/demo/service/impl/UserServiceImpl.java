@@ -1,18 +1,17 @@
 package com.example.demo.service.impl;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.example.demo.controller.dto.UserDTO;
+import com.example.demo.model.User;
 import com.example.demo.service.UserService;
 import com.example.demo.repository.UserRepository;
 import java.util.List;
 
 @Service
 public class UserServiceImpl implements UserService{
-    @Autowired
+
     private UserRepository userRepository;
     @Override
-    public Boolean saveUser(UserDTO user) {
+    public Boolean saveUser(User user) {
         try {
             userRepository.save(user);
             return true;
@@ -22,16 +21,16 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
-    public List<UserDTO> findAll() {
+    public List<User> findAll() {
         return userRepository.findAll();
     }
 
     @Override
-    public List<UserDTO> findBookingByDocument(Integer document) {
+    public List<User> findBookingByDocument(Integer document) {
         return userRepository.findBookingByDocument(document);
     }
     @Override
-    public List<UserDTO> findPetsByDocument(Integer document) {
+    public List<User> findPetsByDocument(Integer document) {
         return userRepository.findPetsByDocument(document);
     }
 }
