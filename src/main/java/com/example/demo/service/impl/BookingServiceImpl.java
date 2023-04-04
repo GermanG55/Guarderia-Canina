@@ -3,23 +3,28 @@ package com.example.demo.service.impl;
 import com.example.demo.model.Booking;
 import com.example.demo.repository.BookingRepository;
 import com.example.demo.service.BookingService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 
 @Service
 public class BookingServiceImpl implements BookingService {
-
+    @Autowired
     private BookingRepository bookingRepository;
     @Override
     public Boolean saveBooking(Booking booking) {
         try {
-            bookingRepository.save(booking);
+            if (bookingRepository.countByDate(new java.sql.Date(booking.getDate().getTime()))<20 &&  bookingRepository.countByClient(booking.getClientId())<1 ){
+                bookingRepository.save(booking);
+                return true;
+            }
 
-            return true;
         } catch (Exception e) {
-            return false;
+            throw e;
         }
+        return false;
     }
 
     @Override
@@ -33,7 +38,7 @@ public class BookingServiceImpl implements BookingService {
     }
 
     @Override
-    public List<Booking> findByDate(String date) {
-        return bookingRepository.findByDate("'"+ date +"'");
+    public List<Booking> findByDate(Date date) {
+        return bookingRepository.findByDate(new java.sql.Date(date.getTime()));
     }
 }

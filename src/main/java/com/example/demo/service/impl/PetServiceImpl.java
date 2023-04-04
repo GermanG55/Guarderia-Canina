@@ -3,30 +3,25 @@ package com.example.demo.service.impl;
 import com.example.demo.model.Pet;
 import com.example.demo.repository.PetRepository;
 import com.example.demo.service.PetService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
 public class PetServiceImpl implements PetService {
-
+@Autowired
     private PetRepository petRepository;
     @Override
     public Boolean savePet(Pet pet) {
-        boolean result;
-        ArrayList<Pet> petList = new ArrayList<>();
-        if (petList.size() <= 20) {
-            try {
+
+        try {
+            if(petRepository.countByClient(pet.getOwnerDocument())<2){
                 petRepository.save(pet);
-                result = true;
+            return true;}
             } catch (Exception e) {
-                result = false;
+            throw e;
             }
-        } else {
-            result = false;
-        }
-        return result;
+        return false;
     }
 
     @Override

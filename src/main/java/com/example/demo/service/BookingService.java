@@ -2,6 +2,7 @@ package com.example.demo.service;
 
 import com.example.demo.model.Booking;
 
+import java.util.Date;
 import java.util.List;
 
 public interface BookingService {
@@ -12,5 +13,5 @@ public interface BookingService {
 
     List<Booking> findBookingByBookingId(Integer bookingId);
 
-    List<Booking> findByDate(String date);
+    List<Booking> findByDate(Date date);
 }
