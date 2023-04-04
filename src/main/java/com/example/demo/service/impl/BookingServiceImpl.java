@@ -36,11 +36,6 @@ public class BookingServiceImpl implements BookingService {
     }
 
     @Override
-    public List<Booking> findBookingByBookingId(Integer BookingId) {
-        return null;
-    }
-
-    @Override
     public List<Booking> findByDate(Date date) {
         return bookingRepository.findByDate(new java.sql.Date(date.getTime()));
     }
