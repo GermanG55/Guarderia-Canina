@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.demo.controller.UserControllerTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-04-04T05:22:18" hostname="LAPTOP-I8O1TOJ1" time="0.74">
+  <properties/>
+  <testcase name="Given_All_Values_Request_When_Values_Arent_Empty_Then_Return_Existing_List_As_Not_Empty()" classname="com.example.demo.controller.UserControllerTest" time="0.74"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
