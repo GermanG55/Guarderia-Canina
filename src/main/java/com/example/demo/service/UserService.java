@@ -5,7 +5,7 @@ import com.example.demo.model.User;
 import java.util.List;
 
 public interface UserService {
-    public Boolean saveUser(User user);
+    Boolean saveUser(User user);
 
     List<User> findAll();
 

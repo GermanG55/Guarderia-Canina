@@ -13,8 +13,8 @@ public class UserController {
     @Autowired
     private UserService userServices;
     @RequestMapping(value="/saveUser",method= RequestMethod.POST)
-    public Boolean saveUser(@RequestBody User u){
-        return userServices.saveUser(u);
+    public Boolean saveUser(@RequestBody User user){
+        return userServices.saveUser(user);
     }
     @GetMapping(path = "/all")
     public List<User> findAll(){

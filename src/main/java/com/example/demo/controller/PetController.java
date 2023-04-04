@@ -14,8 +14,8 @@ public class PetController {
     @Autowired
     private PetService petServices;
     @RequestMapping(value="/savePet",method= RequestMethod.POST)
-    public Boolean savePet(@RequestBody Pet u){
-        return petServices.savePet(u);
+    public Boolean savePet(@RequestBody Pet pet){
+        return petServices.savePet(pet);
     }
     @GetMapping(path = "/all")
     public List<Pet> findAll(){

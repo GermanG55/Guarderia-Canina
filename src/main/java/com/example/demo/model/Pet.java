@@ -10,6 +10,7 @@ import java.util.Date;
 public class Pet {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID", nullable = false, length = 10)
     private Integer id;
 
@@ -17,7 +18,7 @@ public class Pet {
     private String petName;
 
     @Column(name = "CLIENT", nullable = false, length = 50)
-    private String ownerDocument;
+    private Integer ownerDocument;
     @ManyToOne
     @JoinColumn(name="CLIENT", insertable = false, updatable = false)
     private User user;
