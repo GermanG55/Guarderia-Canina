@@ -2,7 +2,6 @@ package com.example.demo.controller;
 
 import com.example.demo.model.Pet;
 import com.example.demo.service.PetService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -11,8 +10,12 @@ import java.util.List;
 @RequestMapping(path="/pets")
 public class PetController {
 
-    @Autowired
-    private PetService petServices;
+    private final PetService petServices;
+
+    public PetController(PetService petServices) {
+        this.petServices = petServices;
+    }
+
     @RequestMapping(value="/savePet",method= RequestMethod.POST)
     public Boolean savePet(@RequestBody Pet pet){
         return petServices.savePet(pet);

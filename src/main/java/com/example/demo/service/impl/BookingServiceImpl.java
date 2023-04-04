@@ -3,7 +3,6 @@ package com.example.demo.service.impl;
 import com.example.demo.model.Booking;
 import com.example.demo.repository.BookingRepository;
 import com.example.demo.service.BookingService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
@@ -11,8 +10,12 @@ import java.util.List;
 
 @Service
 public class BookingServiceImpl implements BookingService {
-    @Autowired
-    private BookingRepository bookingRepository;
+    private final BookingRepository bookingRepository;
+
+    public BookingServiceImpl(BookingRepository bookingRepository) {
+        this.bookingRepository = bookingRepository;
+    }
+
     @Override
     public Boolean saveBooking(Booking booking) {
         try {
