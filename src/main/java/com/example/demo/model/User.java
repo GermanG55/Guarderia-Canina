@@ -1,10 +1,18 @@
 package com.example.demo.model;
 
 import javax.persistence.*;
+
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.util.*;
 
-@Data @Entity @Table(name = "CLIENT")
+@Data
+@Entity
+@AllArgsConstructor
+@NoArgsConstructor
+@Table(name = "CLIENT")
 public class User {
     @Id
     @Column(name = "DOCUMENT", nullable = false, length = 11)

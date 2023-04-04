@@ -23,12 +23,8 @@ public class UserController {
     public List<User> findAll(){
         return userServices.findAll();
     }
-
     @GetMapping("/bookings")
-    public List<User> findBookingByDocument(@RequestParam Integer document){
-
-        return userServices.findBookingByDocument(document);
-    }
+    public List<User> findBookingByDocument(@RequestParam Integer document){ return userServices.findBookingByDocument(document);}
     @GetMapping("/pets")
     public List<User> findPetsByDocument(@RequestParam Integer document){
 

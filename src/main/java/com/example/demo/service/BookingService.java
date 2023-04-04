@@ -11,7 +11,5 @@ public interface BookingService {
 
     List<Booking> findAll();
 
-    List<Booking> findBookingByBookingId(Integer bookingId);
-
     List<Booking> findByDate(Date date);
 }
