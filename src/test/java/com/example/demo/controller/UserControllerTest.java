@@ -1,6 +1,5 @@
 package com.example.demo.controller;
 
-import com.example.demo.model.Pet;
 import com.example.demo.model.User;
 import com.example.demo.service.UserService;
 import org.assertj.core.api.Assertions;
@@ -59,7 +58,7 @@ public class UserControllerTest {
     public void Given_Saved_User_When_New_User_Registered_Then_Return_Boolean_True (){
         User user = new User(531,"Daniel","Rio Frio",new Date());
         Mockito.when(userService.saveUser(new User())).thenReturn(true);
-        boolean result = userService.saveUser(new User());
+        boolean result = userController.saveUser(new User());
         assertEquals(true, result);
         Mockito.verify(userService).saveUser(new User());
     }

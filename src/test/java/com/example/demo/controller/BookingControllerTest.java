@@ -58,7 +58,7 @@ public class BookingControllerTest {
     public void Given_Saved_Booking_When_New_Booking_Registered_Then_Return_Boolean_True (){
         Booking booking = new Booking(422,323,new User(),433,new Pet(),new Date());
         Mockito.when(bookingService.saveBooking(new Booking())).thenReturn(true);
-        boolean result = bookingService.saveBooking(new Booking());
+        boolean result = bookingController.saveBooking(new Booking());
         assertEquals(true, result);
         Mockito.verify(bookingService).saveBooking(new Booking());
     }

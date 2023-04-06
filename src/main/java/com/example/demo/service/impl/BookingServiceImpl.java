@@ -25,7 +25,7 @@ public class BookingServiceImpl implements BookingService {
             }
 
         } catch (Exception e) {
-            throw e;
+            return false;
         }
         return false;
     }
