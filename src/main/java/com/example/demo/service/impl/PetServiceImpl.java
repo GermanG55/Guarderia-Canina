@@ -23,7 +23,7 @@ public class PetServiceImpl implements PetService {
                 petRepository.save(pet);
             return true;}
             } catch (Exception e) {
-            throw e;
+            return false;
             }
         return false;
     }

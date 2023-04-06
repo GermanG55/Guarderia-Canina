@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.example.demo.controller.UserControllerTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-04-04T18:25:41" hostname="LAPTOP-I8O1TOJ1" time="0.819">
+<testsuite name="com.example.demo.controller.UserControllerTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2023-04-06T10:28:27" hostname="LAPTOP-B0C5NECA" time="0.088">
   <properties/>
-  <testcase name="Given_Pets_Search_By_Document_When_New_Search_Done_Then_Return_List_Size_As_One()" classname="com.example.demo.controller.UserControllerTest" time="0.819"/>
+  <testcase name="Given_Pet_Search_By_Document_Request_When_Values_Arent_Null_Then_Return_Size_Existent()" classname="com.example.demo.controller.UserControllerTest" time="0.048"/>
+  <testcase name="Given_Booking_Search_By_Document_Request_When_Values_Arent_Null_Then_Return_Size_Existent()" classname="com.example.demo.controller.UserControllerTest" time="0.005"/>
+  <testcase name="Given_All_Values_Request_When_Values_Arent_Null_Then_Return_Size_Existent()" classname="com.example.demo.controller.UserControllerTest" time="0.005"/>
+  <testcase name="Given_Saved_User_When_New_User_Registered_Then_Return_Boolean_True()" classname="com.example.demo.controller.UserControllerTest" time="0.005"/>
+  <testcase name="Given_All_Values_Request_When_Values_Arent_Empty_Then_Return_Existing_List_As_Not_Empty()" classname="com.example.demo.controller.UserControllerTest" time="0.006"/>
+  <testcase name="Given_Search_Booking_By_Document_When_New_Search_Done_Then_Return_List_Size_As_One()" classname="com.example.demo.controller.UserControllerTest" time="0.005"/>
+  <testcase name="Given_Pets_Search_By_Document_When_New_Search_Done_Then_Return_List_Size_As_One()" classname="com.example.demo.controller.UserControllerTest" time="0.004"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

@@ -1,6 +1,5 @@
 package com.example.demo.controller;
 
-import com.example.demo.model.Booking;
 import com.example.demo.model.Pet;
 import com.example.demo.model.User;
 import com.example.demo.service.PetService;
@@ -58,7 +57,7 @@ public class PetControllerTest {
     public void Given_Saved_Pet_When_New_Pet_Registered_Then_Return_Boolean_True (){
         Pet pet = new Pet(563,"German",432,new User(),new Date());
         Mockito.when(petService.savePet(new Pet())).thenReturn(true);
-        boolean result = petService.savePet(new Pet());
+        boolean result = petController.savePet(new Pet());
         assertEquals(true, result);
         Mockito.verify(petService).savePet(new Pet());
     }
