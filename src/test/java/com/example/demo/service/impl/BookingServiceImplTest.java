@@ -25,70 +25,69 @@ public class BookingServiceImplTest {
 
     @Test
     public void Given_A_Booking_When_Save_Booking_Is_Cast_And_Both_Conditions_Are_True_Then_Return_True(){
-        //arrange
+
         Booking booking = new Booking(1,1,null,1,null,new java.util.Date());
         Mockito.when(bookingRepository.save(any(Booking.class))).thenReturn(booking);
         Mockito.when(bookingRepository.countByClient(any(Integer.class))).thenReturn(0);
         Mockito.when(bookingRepository.countByDate(any(Date.class))).thenReturn(3);
-        //act
+
         Boolean response = bookingServiceImpl.saveBooking(booking);
-        //assert
+
         Assertions.assertNotNull(response);
         Assertions.assertEquals(true,response);
-        Mockito.verify(bookingRepository).save(any(Booking.class));
-        Mockito.verify(bookingRepository).countByClient(any(Integer.class));
+        Mockito.verify(bookingRepository).save(booking);
+        Mockito.verify(bookingRepository).countByClient(1);
         Mockito.verify(bookingRepository).countByDate(any(Date.class));
     }
     @Test
     public void Given_A_Booking_When_Save_Booking_Is_Cast_And_Either_Conditions_Are_False_Then_Return_False(){
-        //arrange
+
         Booking booking = new Booking(1,1,null,1,null,new java.util.Date());
         Mockito.when(bookingRepository.countByClient(any(Integer.class))).thenReturn(21);
         Mockito.when(bookingRepository.countByDate(any(Date.class))).thenReturn(0);
-        //act
+
         Boolean response = bookingServiceImpl.saveBooking(booking);
-        //assert
+
         Assertions.assertNotNull(response);
         Assertions.assertEquals(false,response);
-        Mockito.verify(bookingRepository).countByClient(any(Integer.class));
+        Mockito.verify(bookingRepository).countByClient(1);
         Mockito.verify(bookingRepository).countByDate(any(Date.class));
     }
     @Test
     public void Given_A_Booking_And_An_Illegal_Exception_When_Save_Booking_Is_Cast_Then_Return_False(){
-        //arrange
+
         Booking booking = new Booking(1,1,null,1,null,new java.util.Date());
         Mockito.when(bookingRepository.save(any(Booking.class))).thenThrow(new IllegalArgumentException());
-        //act
+
         Boolean response = bookingServiceImpl.saveBooking(booking);
-        //assert
+
         Assertions.assertNotNull(response);
         Assertions.assertEquals(false,response);
     }
     @Test
     public void Given_A_Booking_List_When_Find_All_Is_Cast_Then_Return_Booking_List(){
-        //arrange
+
         List<Booking> bookingList = new ArrayList<>();
         Booking booking = new Booking(1,1,null,1,null,new java.util.Date());
         bookingList.add(booking);
         Mockito.when(bookingRepository.findAll()).thenReturn(bookingList);
-        //act
+
         List<Booking> response = bookingServiceImpl.findAll();
-        //assert
+
         Assertions.assertNotNull(response);
         Mockito.verify(bookingRepository).findAll();
     }
     @Test
     public void Given_A_List_And_A_Date_When_Find_By_Date_Is_Cast_Then_Return_Booking_List(){
-        //arrange
-        String date = "2024-12-12";
+        java.util.Date  date= new java.util.Date(2024-12-12);
         List<Booking> bookingList = new ArrayList<>();
-        Booking booking = new Booking(1,1,null,1,null,new java.util.Date(2024-12-12));
+        Booking booking = new Booking(1,1,null,1,null,date);
         bookingList.add(booking);
-        Mockito.when(bookingRepository.findByDate(new Date(11111))).thenReturn(bookingList);
-        //act
-        List<Booking> response = bookingServiceImpl.findAll();
-        //assert
+        Mockito.when(bookingRepository.findByDate(any(java.sql.Date.class))).thenReturn(bookingList);
+
+        List<Booking> response = bookingServiceImpl.findByDate(date);
+
         Assertions.assertNotNull(response);
-        Mockito.verify(bookingRepository).findAll();
+        Mockito.verify(bookingRepository).findByDate(any(java.sql.Date.class));
     }
 }
