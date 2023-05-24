@@ -1,8 +1,9 @@
 package com.example.demo.controller;
 
+import com.example.demo.controller.dto.UserDto;
+import com.example.demo.model.UserModel;
 import com.example.demo.service.UserService;
 import org.springframework.web.bind.annotation.*;
-import com.example.demo.model.User;
 import java.util.List;
 
 @RestController
@@ -15,18 +16,18 @@ public class UserController {
         this.userServices = userServices;
     }
 
-    @RequestMapping(value="/saveUser",method= RequestMethod.POST)
-    public Boolean saveUser(@RequestBody User user){
-        return userServices.saveUser(user);
+    @PostMapping(value="/saveUser")
+    public void saveUser(@RequestBody UserDto user){
+         userServices.saveUser(user.toModel());
     }
     @GetMapping(path = "/all")
-    public List<User> findAll(){
+    public List<UserModel> findAll(){
         return userServices.findAll();
     }
     @GetMapping("/bookings")
-    public List<User> findBookingByDocument(@RequestParam Integer document){ return userServices.findBookingByDocument(document);}
+    public List<UserModel> findBookingByDocument(@RequestParam Integer document){ return userServices.findBookingByDocument(document);}
     @GetMapping("/pets")
-    public List<User> findPetsByDocument(@RequestParam Integer document){
+    public List<UserModel> findPetsByDocument(@RequestParam Integer document){
 
         return userServices.findPetsByDocument(document);
     }

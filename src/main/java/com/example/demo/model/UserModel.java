@@ -13,7 +13,7 @@ import java.util.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "CLIENT")
-public class User {
+public class UserModel {
     @Id
     @Column(name = "DOCUMENT", nullable = false, length = 11)
     private Integer document;

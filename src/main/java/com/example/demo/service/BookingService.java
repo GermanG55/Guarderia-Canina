@@ -1,15 +1,18 @@
 package com.example.demo.service;
 
-import com.example.demo.model.Booking;
+
+import com.example.demo.model.BookingModel;
+import org.springframework.stereotype.Component;
 
 import java.util.Date;
 import java.util.List;
-
+@Component
 public interface BookingService {
 
-    Boolean saveBooking(Booking booking);
+    void saveBooking(BookingModel booking);
 
-    List<Booking> findAll();
+    List<BookingModel> findAll();
 
-    List<Booking> findByDate(Date date);
+    List<BookingModel> findByDate(Date date);
 }
+

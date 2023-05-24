@@ -1,6 +1,6 @@
 package com.example.demo.service.impl;
 
-import com.example.demo.model.Booking;
+import com.example.demo.model.BookingModel;
 import com.example.demo.repository.BookingRepository;
 import com.example.demo.service.BookingService;
 import org.springframework.stereotype.Service;
@@ -16,27 +16,25 @@ public class BookingServiceImpl implements BookingService {
         this.bookingRepository = bookingRepository;
     }
 
-    @Override
-    public Boolean saveBooking(Booking booking) {
+    public void saveBooking(BookingModel booking) {
         try {
-            if (bookingRepository.countByDate(new java.sql.Date(booking.getDate().getTime()))<20 &&  bookingRepository.countByClient(booking.getClientId())<1 ){
-                bookingRepository.save(booking);
-                return true;
-            }
+            if (bookingRepository.countByDate(new java.sql.Date(booking.getDate().getTime()))<20 &&  bookingRepository.countByClient(booking.getClientId())<1 )
+            {bookingRepository.save(booking);}
+            else if (bookingRepository.countByDate(new java.sql.Date(booking.getDate().getTime()))>20 ||  bookingRepository.countByClient(booking.getClientId())>1)
+            {   System.out.println("Ya existen 20 bookings este dia o un usuario ya tiene un booking este dia");}
 
-        } catch (Exception e) {
-            return false;
+        } catch (Exception exception) {
+            throw new IllegalArgumentException();
         }
-        return false;
     }
 
     @Override
-    public List<Booking> findAll() {
+    public List<BookingModel> findAll() {
         return bookingRepository.findAll();
     }
 
     @Override
-    public List<Booking> findByDate(Date date) {
+    public List<BookingModel> findByDate(Date date) {
         return bookingRepository.findByDate(new java.sql.Date(date.getTime()));
     }
 }

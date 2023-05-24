@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
-import com.example.demo.model.Booking;
+import com.example.demo.controller.dto.BookingDto;
+import com.example.demo.model.BookingModel;
 import com.example.demo.service.BookingService;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;
@@ -9,26 +10,26 @@ import java.util.Date;
 import java.util.List;
 
 @RestController
-@RequestMapping(path="/booking")
+@RequestMapping(path = "/booking")
 public class BookingController {
 
-    private final BookingService BookingServices;
+private final BookingService bookingService;
 
-    public BookingController(BookingService BookingServices) {
-        this.BookingServices = BookingServices;
+    public BookingController(BookingService bookingService) {
+        this.bookingService = bookingService;
     }
 
-    @RequestMapping(value="/saveBooking",method= RequestMethod.POST)
-    public Boolean saveBooking(@RequestBody Booking booking){
-        return BookingServices.saveBooking(booking);
-    }
+    @PostMapping(value = "/saveBooking")
+public void saveBooking(@RequestBody BookingDto booking){
+    bookingService.saveBooking(booking.toModel());
+
+}
     @GetMapping(path = "/all")
-    public List<Booking> findAll(){
-        return BookingServices.findAll();
+    public List<BookingModel> findAll(){
+        return bookingService.findAll();
     }
     @GetMapping(path = "/date")
-    public List<Booking> findByDate(@RequestParam @DateTimeFormat(pattern="yyyy-MM-dd")Date date){
-        return BookingServices.findByDate(date);
+    public List<BookingModel> findByDate(@RequestParam @DateTimeFormat(pattern="yyyy-MM-dd") Date date) {
+        return bookingService.findByDate(date);
     }
-
 }

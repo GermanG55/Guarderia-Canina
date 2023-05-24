@@ -1,15 +1,15 @@
 package com.example.demo.service;
 
-import com.example.demo.model.User;
+import com.example.demo.model.UserModel;
 
 import java.util.List;
 
 public interface UserService {
-    Boolean saveUser(User user);
+    void saveUser(UserModel user);
 
-    List<User> findAll();
+    List<UserModel> findAll();
 
-    List<User> findBookingByDocument(Integer document);
+    List<UserModel> findBookingByDocument(Integer document);
 
-    List<User> findPetsByDocument(Integer document);
+    List<UserModel> findPetsByDocument(Integer document);
 }

@@ -12,7 +12,7 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "PET")
-public class Pet {
+public class PetModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,7 +26,7 @@ public class Pet {
     private Integer ownerDocument;
     @ManyToOne
     @JoinColumn(name="CLIENT", insertable = false, updatable = false)
-    private User user;
+    private UserModel user;
 
     @Column(name = "DATE_CREATED", nullable = false, length = 100, updatable = false)
     @Temporal(TemporalType.DATE)
