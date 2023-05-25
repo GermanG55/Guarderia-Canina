@@ -20,9 +20,6 @@ public class BookingServiceImpl implements BookingService {
         try {
             if (bookingRepository.countByDate(new java.sql.Date(booking.getDate().getTime()))<20 &&  bookingRepository.countByClient(booking.getClientId())<1 )
             {bookingRepository.save(booking);}
-            else if (bookingRepository.countByDate(new java.sql.Date(booking.getDate().getTime()))>20 ||  bookingRepository.countByClient(booking.getClientId())>1)
-            {   System.out.println("Ya existen 20 bookings este dia o un usuario ya tiene un booking este dia");}
-
         } catch (Exception exception) {
             throw new IllegalArgumentException();
         }

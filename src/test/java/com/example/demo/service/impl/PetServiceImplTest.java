@@ -36,16 +36,6 @@ public class PetServiceImplTest {
 
         Mockito.verify(petRepository).save(pet.toModel());
     }
-    /*@Test
-    public void Given_A_Pet_When_Save_Pet_Is_Cast_And_The_Condition_Is_False_Then_Return_False(){
-
-        pet = new PetDto(1,"Michi",1,null,new java.util.Date());
-        Mockito.when(petRepository.countByClient(any(Integer.class))).thenReturn(3);
-
-        petServiceImpl.savePet(pet.toModel());
-
-        Mockito.verify(petRepository).countByClient(any(Integer.class));
-    }*/
     @Test
     public void Given_A_Pet_And_An_Illegal_Exception_When_Save_Pet_Is_Cast_Then_Throw_An_Illegal_Argument_Exception(){
 

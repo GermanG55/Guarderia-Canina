@@ -3,14 +3,20 @@ package com.example.demo.service.impl;
 import com.example.demo.controller.dto.BookingDto;
 import com.example.demo.model.BookingModel;
 import com.example.demo.repository.BookingRepository;
+import org.junit.Assert;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.yaml.snakeyaml.reader.StreamReader;
 
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
 import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
@@ -20,12 +26,12 @@ import static org.mockito.ArgumentMatchers.any;
 
 @ExtendWith(MockitoExtension.class)
 public class BookingServiceImplTest {
+
     @InjectMocks
     BookingServiceImpl bookingServiceImpl;
     @Mock
     BookingRepository bookingRepository;
     private BookingDto booking;
-
 
     @Test
     public void Given_A_Booking_When_Save_Booking_Is_Cast_And_Both_Conditions_Are_True_Then_Save_User(){
@@ -52,18 +58,6 @@ public class BookingServiceImplTest {
         );
         Mockito.verify(bookingRepository).save(booking.toModel());
     }
-    /*@Test
-    public void Given_A_Booking_With_20_Bookings_Or_An_Already_Existing_User_When_Save_Booking_Is_Cast_Then_Throw_An_Illegal_Exception_(){
-
-        BookingDto booking = new BookingDto(1,1,null,1,null,new java.util.Date());
-        Mockito.when(bookingRepository.countByClient(any(Integer.class))).thenReturn(1);
-        Mockito.when(bookingRepository.countByDate(any(Date.class))).thenReturn(21);
-
-        bookingServiceImpl.saveBooking(booking.toModel());
-
-        Mockito.verify(bookingRepository).countByClient(1);
-        Mockito.verify(bookingRepository).countByDate(any(Date.class));
-    }*/
     @Test
     public void Given_A_Booking_List_When_Find_All_Is_Cast_Then_Return_Booking_List(){
 

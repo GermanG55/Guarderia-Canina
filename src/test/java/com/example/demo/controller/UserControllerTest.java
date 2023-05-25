@@ -50,25 +50,21 @@ public class UserControllerTest {
 
         Mockito.verify(userService).saveUser(user.toModel());
     }
-    //esta mal el size es 2 deberia ser 1
     @Test
     public void Given_Search_Booking_By_Document_When_New_Search_Done_Then_Return_List_Size_As_One (){
         user = new UserDto(1,"Daniel","Chilacos 34-100",new Date());
-        //userList.add(user.toModel());
-        user = new UserDto(2,"Daniel","Chilacos 34-100",new Date());
         userList.add(user.toModel());
         Mockito.when(userService.findBookingByDocument(1)).thenReturn(userList);
 
         List<UserModel> result = userController.findBookingByDocument(1);
+
         assertEquals(1, result.size());
         Mockito.verify(userService).findBookingByDocument(1);
     }
-    //esta mal el size es 2 deberia ser 1
+
     @Test
     public void Given_2_Users_When_Search_By_Document_Is_Cast_Then_Return_List_Size_As_One (){
         user = new UserDto(1,"Daniel","Chilacos 34-100",new Date());
-        //userList.add(user.toModel());
-        user = new UserDto(2,"Daniel","Chilacos 34-100",new Date());
         userList.add(user.toModel());
         Mockito.when(userService.findPetsByDocument(1)).thenReturn(userList);
 

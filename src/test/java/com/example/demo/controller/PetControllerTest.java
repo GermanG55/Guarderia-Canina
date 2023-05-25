@@ -39,7 +39,7 @@ public class PetControllerTest {
     }
 
     @Test
-    public void Given_All_Values_Request_When_Values_Arent_Null_Then_Return_Size_Existent (){
+    public void Given_A_List_Of_Two_Pets_When_Find_All_Is_Cast_Then_Verify_Size_Is_Two (){
         pet = new PetDto(1, "German", 1, null, new Date());
         petList.add(pet.toModel());
         pet = new PetDto(2, "German", 2, null, new Date());
@@ -69,7 +69,6 @@ public class PetControllerTest {
         Mockito.when(petService.findByOwnerDocument(1)).thenReturn(petList);
         List<PetModel> result = petController.findByOwnerDocument(1);
         assertEquals(1, result.size());
-        Assertions.assertThat(result);
         Mockito.verify(petService).findByOwnerDocument(1);
     }
 
