@@ -1,6 +1,6 @@
-package com.example.demo.repository;
+package com.example.demo.infrastructura.repository;
 
-import com.example.demo.model.Pet;
+import com.example.demo.dominio.model.PetModel;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -8,8 +8,9 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface PetRepository extends JpaRepository<Pet, String>{
-    public List<Pet> findByOwnerDocument(Integer Id);
+public interface PetRepository extends JpaRepository<PetModel, String>{
+    public List<PetModel> findByOwnerDocument(Integer Id);
     @Query(value = "SELECT count(1) FROM PET as a WHERE a.CLIENT = :ownerDocument", nativeQuery = true)
     Integer countByClient(@Param("ownerDocument") Integer ownerDocument);
 }
+

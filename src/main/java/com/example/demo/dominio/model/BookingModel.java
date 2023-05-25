@@ -1,4 +1,4 @@
-package com.example.demo.model;
+package com.example.demo.dominio.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -12,7 +12,7 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "BOOKING")
-public class Booking {
+public class BookingModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,13 +23,13 @@ public class Booking {
     private Integer clientId;
     @ManyToOne
     @JoinColumn(name="CLIENT_ID", insertable = false, updatable = false)
-    private User user;
+    private UserModel user;
 
     @Column(name = "PET_ID", length = 11)
     private Integer petId;
     @ManyToOne
     @JoinColumn(name="PET_ID", insertable = false, updatable = false)
-    private Pet pet;
+    private PetModel pet;
 
     @Column(name = "DATE")
     @Temporal(TemporalType.DATE)

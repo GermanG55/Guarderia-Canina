@@ -1,9 +1,9 @@
-package com.example.demo.service.impl;
+package com.example.demo.aplicacion.service.impl;
 
+import com.example.demo.dominio.model.UserModel;
 import org.springframework.stereotype.Service;
-import com.example.demo.model.User;
-import com.example.demo.service.UserService;
-import com.example.demo.repository.UserRepository;
+import com.example.demo.aplicacion.service.UserService;
+import com.example.demo.infrastructura.repository.UserRepository;
 import java.util.List;
 
 @Service
@@ -16,26 +16,25 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
-    public Boolean saveUser(User user) {
+    public void saveUser(UserModel user) {
         try {
             userRepository.save(user);
-            return true;
-        } catch (Exception e) {
-            return false;
+        } catch (Exception exception) {
+            throw new IllegalArgumentException();
         }
     }
 
     @Override
-    public List<User> findAll() {
+    public List<UserModel> findAll() {
         return userRepository.findAll();
     }
 
     @Override
-    public List<User> findBookingByDocument(Integer document) {
+    public List<UserModel> findBookingByDocument(Integer document) {
         return userRepository.findBookingByDocument(document);
     }
     @Override
-    public List<User> findPetsByDocument(Integer document) {
+    public List<UserModel> findPetsByDocument(Integer document) {
         return userRepository.findPetsByDocument(document);
     }
 }
