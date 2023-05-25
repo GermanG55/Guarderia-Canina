@@ -1,9 +1,10 @@
 package com.example.demo.controller;
 
 
-import com.example.demo.controller.dto.BookingDto;
-import com.example.demo.model.BookingModel;
-import com.example.demo.service.BookingService;
+import com.example.demo.infrastructura.controller.BookingController;
+import com.example.demo.infrastructura.controller.dto.BookingDto;
+import com.example.demo.dominio.model.BookingModel;
+import com.example.demo.aplicacion.service.BookingService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;

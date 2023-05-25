@@ -1,6 +1,6 @@
-package com.example.demo.service;
+package com.example.demo.aplicacion.service;
 
-import com.example.demo.model.PetModel;
+import com.example.demo.dominio.model.PetModel;
 
 import java.util.List;
 

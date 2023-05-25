@@ -1,8 +1,8 @@
-package com.example.demo.service.impl;
+package com.example.demo.aplicacion.service.impl;
 
-import com.example.demo.model.BookingModel;
-import com.example.demo.repository.BookingRepository;
-import com.example.demo.service.BookingService;
+import com.example.demo.aplicacion.service.BookingService;
+import com.example.demo.dominio.model.BookingModel;
+import com.example.demo.infrastructura.repository.BookingRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;

@@ -1,9 +1,9 @@
-package com.example.demo.service.impl;
+package com.example.demo.aplicacion.service.impl;
 
-import com.example.demo.model.UserModel;
+import com.example.demo.dominio.model.UserModel;
 import org.springframework.stereotype.Service;
-import com.example.demo.service.UserService;
-import com.example.demo.repository.UserRepository;
+import com.example.demo.aplicacion.service.UserService;
+import com.example.demo.infrastructura.repository.UserRepository;
 import java.util.List;
 
 @Service

@@ -1,8 +1,8 @@
-package com.example.demo.controller;
+package com.example.demo.infrastructura.controller;
 
-import com.example.demo.controller.dto.PetDto;
-import com.example.demo.model.PetModel;
-import com.example.demo.service.PetService;
+import com.example.demo.infrastructura.controller.dto.PetDto;
+import com.example.demo.dominio.model.PetModel;
+import com.example.demo.aplicacion.service.PetService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

@@ -1,9 +1,9 @@
-package com.example.demo.controller;
+package com.example.demo.infrastructura.controller;
 
-import com.example.demo.controller.dto.BookingDto;
-import com.example.demo.model.BookingModel;
-import com.example.demo.service.BookingService;
-import com.example.demo.service.rabbitmq.NotifyServiceResource;
+import com.example.demo.infrastructura.controller.dto.BookingDto;
+import com.example.demo.dominio.model.BookingModel;
+import com.example.demo.aplicacion.service.BookingService;
+import com.example.demo.infrastructura.rabbitmq.NotifyServiceResource;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;
 

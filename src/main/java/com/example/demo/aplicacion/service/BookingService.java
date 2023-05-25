@@ -1,7 +1,7 @@
-package com.example.demo.service;
+package com.example.demo.aplicacion.service;
 
 
-import com.example.demo.model.BookingModel;
+import com.example.demo.dominio.model.BookingModel;
 import org.springframework.stereotype.Component;
 
 import java.util.Date;

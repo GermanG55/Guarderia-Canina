@@ -1,8 +1,8 @@
-package com.example.demo.controller;
+package com.example.demo.infrastructura.controller;
 
-import com.example.demo.controller.dto.UserDto;
-import com.example.demo.model.UserModel;
-import com.example.demo.service.UserService;
+import com.example.demo.infrastructura.controller.dto.UserDto;
+import com.example.demo.dominio.model.UserModel;
+import com.example.demo.aplicacion.service.UserService;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 

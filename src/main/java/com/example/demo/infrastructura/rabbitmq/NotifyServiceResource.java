@@ -1,4 +1,4 @@
-package com.example.demo.service.rabbitmq;
+package com.example.demo.infrastructura.rabbitmq;
 
 import org.springframework.amqp.rabbit.annotation.EnableRabbit;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;

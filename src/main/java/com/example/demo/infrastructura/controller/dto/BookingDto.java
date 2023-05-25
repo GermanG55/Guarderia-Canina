@@ -1,9 +1,9 @@
-package com.example.demo.controller.dto;
+package com.example.demo.infrastructura.controller.dto;
 
 
-import com.example.demo.model.BookingModel;
-import com.example.demo.model.PetModel;
-import com.example.demo.model.UserModel;
+import com.example.demo.dominio.model.BookingModel;
+import com.example.demo.dominio.model.PetModel;
+import com.example.demo.dominio.model.UserModel;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

@@ -1,10 +1,11 @@
 package com.example.demo.service.impl;
 
-import com.example.demo.controller.dto.PetDto;
+import com.example.demo.infrastructura.controller.dto.PetDto;
 
-import com.example.demo.model.PetModel;
-import com.example.demo.model.UserModel;
-import com.example.demo.repository.PetRepository;
+import com.example.demo.dominio.model.PetModel;
+import com.example.demo.dominio.model.UserModel;
+import com.example.demo.aplicacion.service.impl.PetServiceImpl;
+import com.example.demo.infrastructura.repository.PetRepository;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

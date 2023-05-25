@@ -1,5 +1,6 @@
 package com.example.demo.service.rabbitmq;
 
+import com.example.demo.infrastructura.rabbitmq.NotifyServiceResource;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;

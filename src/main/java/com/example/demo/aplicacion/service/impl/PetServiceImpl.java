@@ -1,8 +1,8 @@
-package com.example.demo.service.impl;
+package com.example.demo.aplicacion.service.impl;
 
-import com.example.demo.model.PetModel;
-import com.example.demo.repository.PetRepository;
-import com.example.demo.service.PetService;
+import com.example.demo.dominio.model.PetModel;
+import com.example.demo.infrastructura.repository.PetRepository;
+import com.example.demo.aplicacion.service.PetService;
 import org.springframework.stereotype.Service;
 import java.util.List;
 

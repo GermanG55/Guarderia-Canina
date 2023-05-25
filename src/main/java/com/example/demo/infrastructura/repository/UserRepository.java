@@ -1,9 +1,9 @@
-package com.example.demo.repository;
+package com.example.demo.infrastructura.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
-import com.example.demo.model.UserModel;
+import com.example.demo.dominio.model.UserModel;
 import java.util.List;
 
 @Repository

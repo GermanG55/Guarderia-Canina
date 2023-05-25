@@ -1,10 +1,9 @@
 package com.example.demo.controller;
 
-import com.example.demo.controller.dto.PetDto;
-import com.example.demo.controller.dto.UserDto;
-import com.example.demo.model.PetModel;
-import com.example.demo.service.PetService;
-import org.assertj.core.api.Assertions;
+import com.example.demo.infrastructura.controller.PetController;
+import com.example.demo.infrastructura.controller.dto.PetDto;
+import com.example.demo.dominio.model.PetModel;
+import com.example.demo.aplicacion.service.PetService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;

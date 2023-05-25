@@ -1,22 +1,17 @@
 package com.example.demo.service.impl;
 
-import com.example.demo.controller.dto.BookingDto;
-import com.example.demo.model.BookingModel;
-import com.example.demo.repository.BookingRepository;
-import org.junit.Assert;
-import org.junit.jupiter.api.AfterEach;
+import com.example.demo.infrastructura.controller.dto.BookingDto;
+import com.example.demo.dominio.model.BookingModel;
+import com.example.demo.aplicacion.service.impl.BookingServiceImpl;
+import com.example.demo.infrastructura.repository.BookingRepository;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.yaml.snakeyaml.reader.StreamReader;
 
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;
 import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;

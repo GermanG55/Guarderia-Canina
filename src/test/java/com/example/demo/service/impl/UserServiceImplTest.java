@@ -1,9 +1,10 @@
 package com.example.demo.service.impl;
 
 
-import com.example.demo.controller.dto.UserDto;
-import com.example.demo.model.UserModel;
-import com.example.demo.repository.UserRepository;
+import com.example.demo.infrastructura.controller.dto.UserDto;
+import com.example.demo.dominio.model.UserModel;
+import com.example.demo.aplicacion.service.impl.UserServiceImpl;
+import com.example.demo.infrastructura.repository.UserRepository;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

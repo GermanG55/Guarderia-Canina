@@ -1,6 +1,6 @@
-package com.example.demo.repository;
+package com.example.demo.infrastructura.repository;
 
-import com.example.demo.model.PetModel;
+import com.example.demo.dominio.model.PetModel;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
