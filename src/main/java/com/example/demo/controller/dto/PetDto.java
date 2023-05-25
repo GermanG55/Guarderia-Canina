@@ -12,12 +12,12 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 public class PetDto {
-    private Integer Id;
+    private Integer id;
     private String petName;
     private Integer ownerDocument;
     private UserModel user;
-    private Date date_created;
+    private Date dateCreated;
     public PetModel toModel(){
-        return new PetModel(this.Id, this.petName,this.ownerDocument,this.user,this.date_created);
+        return new PetModel(this.id, this.petName,this.ownerDocument,this.user,this.dateCreated);
     }
 }
