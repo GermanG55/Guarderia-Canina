@@ -21,7 +21,7 @@ public class BookingServiceImpl implements BookingService {
             if (bookingRepository.countByDate(new java.sql.Date(booking.getDate().getTime()))<20 &&  bookingRepository.countByClient(booking.getClientId())<1 )
             {bookingRepository.save(booking);}
         } catch (Exception exception) {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException(exception);
         }
     }
 

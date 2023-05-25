@@ -12,8 +12,8 @@ public class NotifyServiceResource {
     public NotifyServiceResource(RabbitTemplate rabbitTemplate) {
         this.rabbitTemplate = rabbitTemplate;
     }
-    public void sendNotification(String noticication){
-        rabbitTemplate.convertAndSend("notificationQueue","notificacion",noticication);
+    public void sendNotification(String notification){
+        rabbitTemplate.convertAndSend("notificationQueue","notificacion",notification);
 
     }
 }
