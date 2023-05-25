@@ -6,7 +6,7 @@ import com.example.demo.aplicacion.service.PetService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping(path="/pets")
 public class PetController {

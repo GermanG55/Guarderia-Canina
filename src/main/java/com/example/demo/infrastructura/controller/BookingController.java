@@ -10,16 +10,18 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Date;
 import java.util.List;
 
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping(path = "/booking")
 public class BookingController {
 
-private final BookingService bookingService;
+    private final BookingService bookingService;
 
     private NotifyServiceResource notifyServiceResource;
 
-    public BookingController(BookingService bookingService) {
+    public BookingController(BookingService bookingService, NotifyServiceResource notifyServiceResource) {
         this.bookingService = bookingService;
+        this.notifyServiceResource = notifyServiceResource;
     }
 
     @PostMapping(value = "/saveBooking")
@@ -35,7 +37,7 @@ private final BookingService bookingService;
         return bookingService.findByDate(date);
     }
     @GetMapping(path = "/send-notification/{notification}")
-    void sendInstructions(@PathVariable String notification){
+    void sendNotification(@PathVariable String notification){
         notifyServiceResource.sendNotification(notification);
     }
 }
