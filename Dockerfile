@@ -4,6 +4,6 @@ RUN yum install httpd -y
 
 WORKDIR /var/www/html
 
-COPY guarderia-canina .
+COPY Guarderia-Canina .
 
 CMD apachectl -D FOREGROUND
